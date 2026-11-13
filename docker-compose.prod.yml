@@ -1,0 +1,82 @@
+services:
+  caddy:
+    image: caddy:2-alpine
+    container_name: qubelancer_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN_NAME=${DOMAIN_NAME:-qubelancer.com}
+      - ACME_EMAIL=${ACME_EMAIL:-admin@qubelancer.com}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - qubelancer_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: qubelancer_frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - qubelancer_net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: qubelancer_backend
+    restart: unless-stopped
+    expose:
+      - "8000"
+    env_file:
+      - .env.production
+    environment:
+      - POSTGRES_SERVER=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${POSTGRES_USER:-qubelancer_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB:-qubelancer_prod}
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-qubelancer_user}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-qubelancer_prod}
+      - SYNC_DATABASE_URL=postgresql+psycopg2://${POSTGRES_USER:-qubelancer_user}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-qubelancer_prod}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - qubelancer_net
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: qubelancer_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-qubelancer_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-qubelancer_prod}
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-qubelancer_user} -d ${POSTGRES_DB:-qubelancer_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qubelancer_net
+
+volumes:
+  caddy_data:
+  caddy_config:
+  postgres_prod_data:
+
+networks:
+  qubelancer_net:
+    driver: bridge

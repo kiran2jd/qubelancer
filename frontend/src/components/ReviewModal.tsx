@@ -21,17 +21,37 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
   const [rating, setRating] = useState<number>(5);
   const [hoverRating, setHoverRating] = useState<number | null>(null);
   const [comment, setComment] = useState("");
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
+  const errors: Record<string, string | null> = {
+    rating: !rating || rating < 1 || rating > 5 ? "Please select a rating from 1 to 5 stars" : null,
+    comment:
+      !comment.trim()
+        ? "Written evaluation feedback is required"
+        : comment.trim().length < 10
+        ? `Feedback must be at least 10 characters (${comment.trim().length}/10)`
+        : comment.trim().length > 1000
+        ? "Feedback cannot exceed 1000 characters"
+        : null,
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  };
+
+  const hasErrors = Object.values(errors).some((err) => err !== null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setTouched({ rating: true, comment: true });
     setError(null);
 
-    if (comment.trim().length < 10) {
-      setError("Please write at least 10 characters of feedback");
+    if (hasErrors) {
+      setError("Please complete the required review fields before submitting.");
       return;
     }
 
@@ -56,7 +76,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
       <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors"
+          className="absolute top-5 right-5 text-slate-400 hover:text-white transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -80,11 +100,11 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           {/* Star selector */}
           <div>
             <label className="block text-xs font-semibold text-slate-300 mb-2">
-              Overall Rating *
+              Overall Rating <span className="text-rose-400">*</span>
             </label>
             <div className="flex items-center gap-2">
               {[1, 2, 3, 4, 5].map((starVal) => {
@@ -96,7 +116,7 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                     onClick={() => setRating(starVal)}
                     onMouseEnter={() => setHoverRating(starVal)}
                     onMouseLeave={() => setHoverRating(null)}
-                    className="p-1 transition-transform hover:scale-110 focus:outline-none"
+                    className="p-1 transition-transform hover:scale-110 focus:outline-none cursor-pointer"
                   >
                     <Star
                       className={`w-7 h-7 transition-colors ${
@@ -112,37 +132,56 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({
                 {rating} of 5 Stars
               </span>
             </div>
+            {touched.rating && errors.rating && (
+              <p className="text-[11px] text-rose-400 mt-1 flex items-center gap-1">
+                <AlertCircle className="w-3 h-3 shrink-0" /> {errors.rating}
+              </p>
+            )}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-              Written Evaluation & Feedback *
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-xs font-semibold text-slate-300">
+                Written Evaluation & Feedback <span className="text-rose-400">*</span>
+              </label>
+              <span className={`text-[10px] ${comment.trim().length < 10 ? "text-amber-400" : "text-emerald-400"}`}>
+                {comment.trim().length} chars (min 10)
+              </span>
+            </div>
             <div className="relative">
               <textarea
-                required
                 rows={4}
-                placeholder="Describe your collaboration, timeliness, professionalism, and quality of deliverables..."
+                placeholder="Describe collaboration quality, punctuality, technical competence, and deliverables..."
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                className="w-full px-3 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 leading-relaxed resize-none"
+                onBlur={() => handleBlur("comment")}
+                className={`w-full px-3 py-2.5 bg-slate-950 border rounded-xl text-white text-sm focus:outline-none leading-relaxed resize-none transition ${
+                  touched.comment && errors.comment
+                    ? "border-rose-500"
+                    : "border-slate-700 focus:border-indigo-500"
+                }`}
               />
               <MessageSquare className="absolute right-3 bottom-3 w-4 h-4 text-slate-600 pointer-events-none" />
             </div>
+            {touched.comment && errors.comment && (
+              <p className="text-[11px] text-rose-400 mt-1 flex items-center gap-1">
+                <AlertCircle className="w-3 h-3 shrink-0" /> {errors.comment}
+              </p>
+            )}
           </div>
 
           <div className="pt-2 flex items-center justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/30 transition-all disabled:opacity-50"
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/30 transition-all disabled:opacity-50 cursor-pointer"
             >
               {isSubmitting ? (
                 <>

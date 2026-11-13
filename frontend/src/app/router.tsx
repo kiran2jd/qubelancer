@@ -24,14 +24,18 @@ import { ContractDetailPage } from "../pages/ContractDetailPage";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { ScrollToTopButton } from "../components/ScrollToTopButton";
 import { WelcomeConfettiModal } from "../components/WelcomeConfettiModal";
+import { FuturisticBackground } from "../components/FuturisticBackground";
+import { AiAssistantModal } from "../components/AiAssistantModal";
 
 export const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
+      <div className="flex flex-col min-h-screen relative text-slate-100">
+        <FuturisticBackground />
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
             {/* Public routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/categories" element={<CategoriesPage />} />
@@ -115,7 +119,9 @@ export const AppRouter: React.FC = () => {
         </main>
         <Footer />
         <ScrollToTopButton />
+        <AiAssistantModal />
         <WelcomeConfettiModal />
+        </div>
       </div>
     </BrowserRouter>
   );

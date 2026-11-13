@@ -91,7 +91,7 @@ export const RazorpayCheckoutModal: React.FC<RazorpayCheckoutModalProps> = ({
 
         <div className="flex items-center gap-3 mb-6">
           <div className="h-10 px-2.5 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
-            <img src="/bitqube-logo.png" alt="BitQube Logo" className="h-6 w-auto object-contain" />
+            <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-6 w-auto object-contain" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-white">Authorize Milestone Funding</h3>

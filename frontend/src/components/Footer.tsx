@@ -11,14 +11,14 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
               <div className="h-9 px-2.5 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
-                <img src="/bitqube-logo.png" alt="BitQube Logo" className="h-6 w-auto object-contain" />
+                <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-6 w-auto object-contain" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                Freelance <span className="text-indigo-400 font-normal">Global</span>
+                Qube<span className="text-indigo-400 font-semibold">Lancer</span>
               </span>
             </Link>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Connecting enterprises, high-growth startups, and entrepreneurs with verified independent professionals, specialized consultants, and boutique service firms worldwide.
+              Connecting enterprises, high-growth startups, and entrepreneurs with verified independent professionals, specialized consultants, and autonomous service pipelines worldwide.
             </p>
             <div className="flex items-center gap-4 text-xs text-slate-500 pt-2">
               <div className="flex items-center gap-1.5">
@@ -73,11 +73,10 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li><Link to="/how-it-works" className="hover:text-white transition">How It Works</Link></li>
-              <li><Link to="/about" className="hover:text-white transition">About BitQube</Link></li>
+              <li><Link to="/about" className="hover:text-white transition">About QubeLancer</Link></li>
               <li><Link to="/about" className="hover:text-white transition">Trust & Security</Link></li>
               <li><Link to="/about" className="hover:text-white transition">Terms of Service</Link></li>
               <li><Link to="/about" className="hover:text-white transition">Privacy Policy</Link></li>
-              <li><a href="https://www.bitqube.org" target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 transition">Visit bitqube.org</a></li>
             </ul>
           </div>
         </div>
@@ -85,13 +84,13 @@ export const Footer: React.FC = () => {
         {/* Legal Disclaimers & Copyright */}
         <div className="mt-12 pt-8 border-t border-slate-900 space-y-4">
           <p className="text-[11px] text-slate-500 leading-relaxed">
-            <strong className="text-slate-400">Regulated Services Notice:</strong> Legal, financial, tax, and investment advisory services must be provided strictly by qualified and authorized professionals in their respective jurisdictions. BitQube Freelance operates as an enabling discovery and transaction management platform.
+            <strong className="text-slate-400">Regulated Services Notice:</strong> Legal, financial, tax, and investment advisory services must be provided strictly by qualified and authorized professionals in their respective jurisdictions. QubeLancer operates as an enabling discovery and transaction management platform.
           </p>
           <p className="text-[11px] text-slate-500 leading-relaxed">
-            <strong className="text-slate-400">Fiat Currency & Ecosystem Notice:</strong> All initial transactions, milestone funding, and payouts are conducted in sovereign fiat currencies (defaulting to INR in India via Razorpay). BTQ and QUBEX are non-operational roadmap placeholders and are not active payment mechanisms or investment assets in this release.
+            <strong className="text-slate-400">Fiat Currency & Ecosystem Notice:</strong> All initial transactions, milestone funding, and payouts are conducted in sovereign fiat currencies (defaulting to INR in India via Razorpay).
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 pt-4">
-            <p>© {new Date().getFullYear()} BitQube Freelance (https://www.bitqube.org). All rights reserved.</p>
+            <p>© {new Date().getFullYear()} QubeLancer. All rights reserved.</p>
             <p>Engineered for high-trust global engagements.</p>
           </div>
         </div>

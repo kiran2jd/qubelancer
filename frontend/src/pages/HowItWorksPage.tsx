@@ -39,7 +39,7 @@ export const HowItWorksPage: React.FC = () => {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
       <div className="text-center space-y-4">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white">
-          How BitQube Freelance Works
+          How QubeLancer Works
         </h1>
         <p className="text-base text-slate-400 max-w-2xl mx-auto">
           An enterprise-grade marketplace designed for high-value professional engagements, milestone safety, and transparent fiat settlements.
@@ -68,7 +68,7 @@ export const HowItWorksPage: React.FC = () => {
         <div>
           <h3 className="text-xl font-bold text-white">Ready to hire or offer services?</h3>
           <p className="text-xs text-slate-400 mt-1">
-            Join hundreds of vetted consultants and businesses on BitQube today.
+            Join hundreds of vetted consultants and businesses on QubeLancer today.
           </p>
         </div>
         <Link

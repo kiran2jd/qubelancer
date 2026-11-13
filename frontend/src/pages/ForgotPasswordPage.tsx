@@ -36,7 +36,7 @@ export const ForgotPasswordPage: React.FC = () => {
               <Layers className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold tracking-tight text-white">
-              BitQube <span className="text-indigo-400 font-medium">Freelance</span>
+              Qube<span className="text-indigo-400 font-semibold">Lancer</span>
             </span>
           </Link>
           <h2 className="text-2xl font-bold tracking-tight text-white">Reset your password</h2>

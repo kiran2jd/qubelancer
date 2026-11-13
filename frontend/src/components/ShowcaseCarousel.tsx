@@ -82,7 +82,7 @@ const SLIDES: SlideData[] = [
     badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
     title: "Instant Tax Receipts & Double-Entry Ledger",
     subtitle:
-      "Never scramble for invoices or accounting reconciliation. BitQube automatically generates legally compliant GST tax receipts with platform fee breakdowns the instant a milestone is released.",
+      "Never scramble for invoices or accounting reconciliation. QubeLancer automatically generates legally compliant GST tax receipts with platform fee breakdowns the instant a milestone is released.",
     ctaPrimaryText: "Learn About Platform Governance",
     ctaPrimaryLink: "/about",
     ctaSecondaryText: "Register Free",
@@ -275,7 +275,7 @@ export const ShowcaseCarousel: React.FC = () => {
                     <strong className="text-white">$ 270.00 (~ ₹22,680)</strong>
                   </div>
                   <div className="flex justify-between text-slate-400">
-                    <span>BitQube Platform Fee (10%)</span>
+                    <span>QubeLancer Platform Fee (10%)</span>
                     <strong className="text-slate-300">$ 30.00 (~ ₹2,520)</strong>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ export const ShowcaseCarousel: React.FC = () => {
                 </div>
 
                 <div className="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-2 text-[11px] text-slate-300">
-                  <p className="text-indigo-400">$ bitqube agent --audit --precision</p>
+                  <p className="text-indigo-400">$ qubelancer agent --audit --precision</p>
                   <p className="text-slate-400">▸ Indexing legal contract corpus...</p>
                   <p className="text-slate-400">▸ Verifying DPDP Act clause compliance...</p>
                   <p className="text-emerald-400 font-bold">✓ 0 Critical Flaws · 99.8% Precision</p>
@@ -325,11 +325,11 @@ export const ShowcaseCarousel: React.FC = () => {
                     <FileText className="w-4 h-4" />
                     <span>Tax Invoice & Receipt</span>
                   </div>
-                  <span className="text-[10px] font-mono text-slate-500">INV-BTQ-202610</span>
+                  <span className="text-[10px] font-mono text-slate-500">INV-QL-202610</span>
                 </div>
 
                 <div className="border-b border-slate-800 pb-3 space-y-1">
-                  <p className="text-xs font-bold text-white">BitQube Freelance Marketplace</p>
+                  <p className="text-xs font-bold text-white">QubeLancer Marketplace</p>
                   <p className="text-[10px] text-slate-500 font-mono">GSTIN: 29AAAAA0000A1Z5</p>
                 </div>
 

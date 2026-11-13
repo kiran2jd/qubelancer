@@ -83,9 +83,9 @@ export const InvoiceModal: React.FC<InvoiceModalProps> = ({
               <div className="space-y-1">
                 <div className="flex items-center gap-2.5">
                   <div className="h-9 px-2 py-0.5 rounded-lg bg-white/95 flex items-center justify-center shadow-sm">
-                    <img src="/bitqube-logo.png" alt="BitQube Logo" className="h-6 w-auto object-contain" />
+                    <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-6 w-auto object-contain" />
                   </div>
-                  <span className="font-bold text-lg text-white">Freelance</span>
+                  <span className="font-bold text-lg text-white">Qube<span className="text-indigo-400">Lancer</span></span>
                 </div>
                 <p className="text-[11px] text-slate-400">Tax Invoice & Escrow Receipt</p>
                 <p className="text-[11px] text-slate-500 font-mono">GSTIN: 29AAAAA0000A1Z5</p>

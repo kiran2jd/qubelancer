@@ -1,3 +1,3 @@
-# BitQube Freelance Backend API
+# QubeLancer Backend API
 
 FastAPI modular monolith backend service.

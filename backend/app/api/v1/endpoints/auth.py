@@ -117,7 +117,7 @@ async def register(
             user_id=new_user.id,
             display_name=f"{new_user.first_name} {new_user.last_name}",
             title="Independent Consultant",
-            biography="Professional consultant ready for business opportunities on BitQube.",
+            biography="Professional consultant ready for business opportunities on QubeLancer.",
             country_code=new_user.country_code,
             currency_code=new_user.preferred_currency,
             skills=["Consulting"],

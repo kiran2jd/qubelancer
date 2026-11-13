@@ -12,7 +12,7 @@ const API_BASE = import.meta.env.VITE_API_URL
   : "/api/v1";
 
 function getStoredToken(): string | null {
-  return localStorage.getItem("bitqube_token");
+  return localStorage.getItem("qubelancer_token") || localStorage.getItem("bitqube_token");
 }
 
 async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {

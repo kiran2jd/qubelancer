@@ -134,7 +134,7 @@ export const FindProfessionalsPage: React.FC = () => {
 
                     {prof.verification_status === "verified" && (
                       <span
-                        title="Identity & Credentials Verified by BitQube"
+                        title="Identity & Credentials Verified by QubeLancer"
                         className="p-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
                       >
                         <ShieldCheck className="w-4 h-4" />

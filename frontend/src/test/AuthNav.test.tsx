@@ -14,11 +14,13 @@ describe("Navbar Component", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByAltText(/BitQube Logo/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/\$ USD/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/₹ INR/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/QubeLancer Logo/i)).toBeInTheDocument();
+    expect(screen.getByText(/Lancer/i)).toBeInTheDocument();
     expect(screen.getByText(/Find Professionals/i)).toBeInTheDocument();
     expect(screen.getByText(/Browse Services/i)).toBeInTheDocument();
+    expect(screen.getByText(/Projects/i)).toBeInTheDocument();
+    expect(screen.getByText(/How It Works/i)).toBeInTheDocument();
+    expect(screen.getByText(/About/i)).toBeInTheDocument();
     expect(screen.getByText(/Sign In/i)).toBeInTheDocument();
     expect(screen.getByText(/Get Started/i)).toBeInTheDocument();
   });

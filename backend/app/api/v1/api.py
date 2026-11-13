@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 from app.api.v1.endpoints import (
     admin,
+    ai,
     auth,
     categories,
     config,
@@ -35,3 +36,4 @@ api_router.include_router(payments.router, prefix="/payments", tags=["Payments &
 api_router.include_router(admin.router, prefix="/admin", tags=["Admin & Governance"])
 api_router.include_router(disputes.router, prefix="/disputes", tags=["Disputes"])
 api_router.include_router(documents.router, prefix="/documents", tags=["Documents & Files"])
+api_router.include_router(ai.router, prefix="/ai", tags=["AI & Copilot"])

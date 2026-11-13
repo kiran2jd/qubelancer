@@ -10,6 +10,9 @@ import {
   Search,
   Sparkles,
   Award,
+  Bot,
+  Users,
+  Cpu,
 } from "lucide-react";
 import { api } from "../api/client";
 import { CategoryIcon } from "../components/CategoryIcon";
@@ -73,6 +76,54 @@ export const HomePage: React.FC = () => {
               <span className="text-slate-400 hover:text-indigo-400 cursor-pointer" onClick={() => setSearchQuery("AI")}>AI & Automation</span>
               <span className="text-slate-400 hover:text-indigo-400 cursor-pointer" onClick={() => setSearchQuery("Legal")}>Legal Services</span>
               <span className="text-slate-400 hover:text-indigo-400 cursor-pointer" onClick={() => setSearchQuery("Web3")}>Web3 Developers</span>
+            </div>
+          </div>
+
+          {/* Systems, Freelancers & AI Automations Triple Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 max-w-5xl mx-auto text-left">
+            <div className="p-5 rounded-3xl bg-slate-900/60 border border-indigo-500/25 shadow-xl backdrop-blur-md hover:border-indigo-500/50 hover:bg-slate-900/80 transition-all duration-300 group hover:-translate-y-1">
+              <div className="flex items-center gap-3.5 mb-2.5">
+                <div className="w-11 h-11 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:scale-105 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-md shadow-indigo-500/20">
+                  <Bot className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">AI Automations</h3>
+                  <span className="text-[11px] text-indigo-400 font-mono">Agent Pipelines</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Deploy autonomous multi-agent systems, automated workflows, and production LLM architectures.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/60 border border-emerald-500/25 shadow-xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-900/80 transition-all duration-300 group hover:-translate-y-1">
+              <div className="flex items-center gap-3.5 mb-2.5">
+                <div className="w-11 h-11 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-md shadow-emerald-500/20">
+                  <Users className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Verified Freelancers</h3>
+                  <span className="text-[11px] text-emerald-400 font-mono">Vetted Human Experts</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Connect with legally vetted corporate counsel, certified accountants, and senior technical architects.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-3xl bg-slate-900/60 border border-cyan-500/25 shadow-xl backdrop-blur-md hover:border-cyan-500/50 hover:bg-slate-900/80 transition-all duration-300 group hover:-translate-y-1">
+              <div className="flex items-center gap-3.5 mb-2.5">
+                <div className="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:scale-105 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-md shadow-cyan-500/20">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">Autonomous Systems</h3>
+                  <span className="text-[11px] text-cyan-400 font-mono">Milestone Vault Escrow</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Zero financial risk backed by double-entry accounting ledgers and audited milestone disbursements.
+              </p>
             </div>
           </div>
         </div>
@@ -165,7 +216,7 @@ export const HomePage: React.FC = () => {
               Structured Engagement Process
             </span>
             <h2 className="text-3xl font-extrabold text-white mt-2">
-              How BitQube Freelance Works
+              How QubeLancer Works
             </h2>
             <p className="text-sm text-slate-400 mt-3">
               Protected, transparent engagements backed by digital contracts, funded milestones, and immutable accounting.

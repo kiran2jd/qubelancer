@@ -14,9 +14,9 @@ from app.core.security_headers import SecurityHeadersMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("BitQube Freelance backend engine initializing...")
+    logger.info("QubeLancer backend engine initializing...")
     yield
-    logger.info("BitQube Freelance backend shutting down...")
+    logger.info("QubeLancer backend shutting down...")
 
 
 app = FastAPI(

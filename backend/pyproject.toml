@@ -1,7 +1,7 @@
 [project]
-name = "bitqube-backend"
+name = "qubelancer-backend"
 version = "0.1.0"
-description = "BitQube Freelance Backend API"
+description = "QubeLancer Backend API"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

@@ -57,12 +57,12 @@ export const ResetPasswordPage: React.FC = () => {
               <Layers className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold tracking-tight text-white">
-              BitQube <span className="text-indigo-400 font-medium">Freelance</span>
+              Qube<span className="text-indigo-400 font-semibold">Lancer</span>
             </span>
           </Link>
           <h2 className="text-2xl font-bold tracking-tight text-white">Set new password</h2>
           <p className="mt-2 text-sm text-slate-400">
-            Create a secure password for your BitQube account.
+            Create a secure password for your QubeLancer account.
           </p>
         </div>
 

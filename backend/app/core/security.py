@@ -81,7 +81,7 @@ def generate_totp_secret() -> str:
 def get_totp_uri(secret: str, email: str) -> str:
     """Generate the otpauth URI for QR codes and authenticator apps."""
     import pyotp
-    return pyotp.totp.TOTP(secret).provisioning_uri(name=email, issuer_name="BitQube Freelance")
+    return pyotp.totp.TOTP(secret).provisioning_uri(name=email, issuer_name="QubeLancer")
 
 
 def verify_totp(secret: str, code: str) -> bool:

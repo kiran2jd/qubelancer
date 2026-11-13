@@ -1,4 +1,4 @@
-# BitQube Freelance — Global Professional Services Marketplace
+# QubeLancer — Global Professional Services & Autonomous Marketplace
 
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg)](#)
 [![Python: 3.12+](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
@@ -7,24 +7,33 @@
 [![TypeScript: 5.x](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
 [![Database: PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)](https://www.postgresql.org/)
 [![Reverse Proxy: Caddy](https://img.shields.io/badge/Proxy-Caddy%202-brightgreen.svg)](https://caddyserver.com/)
+[![Vercel: Ready](https://img.shields.io/badge/Vercel-Demo%20Ready-black.svg)](https://vercel.com/)
 
-BitQube Freelance is a secure, responsive, global professional services marketplace connecting customers, businesses, startups, and entrepreneurs with independent professionals, consultants, and service firms.
+QubeLancer is a high-trust, responsive, global professional services marketplace connecting customers, enterprises, and startups with vetted independent consultants, developers, corporate attorneys, and AI specialists.
 
-The platform provides complete project lifecycles: discovering talent, publishing project requirements, bidding via proposals, executing milestones under contractual terms, secure fiat payment processing, deliverable submission, dispute resolution, and bilateral reviews.
+The platform provides complete end-to-end project lifecycles: discovering verified talent, conversational AI & voice project brief generation, bidding via structured proposals, executing milestone-based escrow contracts, dual-currency fiat settlement ($ USD marketplace view with ₹ INR Razorpay checkout at $1 = ₹84), deliverable submission, dispute resolution, and bilateral reviews.
+
+---
+
+## ⚡ Deployment Channels
+
+- **Frontend Demo (Vercel):** Seamless client-side flow testing without requiring an active backend server. Built-in interactive mock data and fallbacks for projects, categories, vetted experts, and the QubeLancer AI Copilot.
+- **Production (Hetzner Cloud + Namecheap):** Ubuntu 24.04 VPS with Docker Compose, FastAPI, PostgreSQL 16, Caddy automated Let's Encrypt SSL/TLS, and Namecheap DNS pointing to `qubelancer.com`. See [Hetzner + Namecheap Deployment Guide](docs/HETZNER_NAMECHEAP_DEPLOYMENT_GUIDE.md).
 
 ---
 
 ## 🏛 Architecture Overview
 
-BitQube Freelance is engineered as a **modular monolith** optimized for high performance, enterprise maintainability, and cost-effective hosting on DigitalOcean:
+QubeLancer is engineered as a **modular monolith** with autonomous micro-workflows:
 
 - **Backend:** Python 3.12+ with FastAPI, SQLAlchemy 2.0 (async/sync), Pydantic v2, and Alembic migrations.
-- **Frontend:** React 19 with TypeScript, Vite, Tailwind CSS, TanStack Query, and React Hook Form + Zod.
-- **Database:** PostgreSQL 16 with UUID v4 primary keys, strict foreign key constraints, and immutable double-entry ledger tables.
-- **Storage:** S3-compatible private object storage (DigitalOcean Spaces / MinIO for local dev) with presigned short-lived URLs.
+- **Frontend:** React 19 with TypeScript, Vite, Tailwind CSS, TanStack Query, and Lucide icons.
+- **AI Copilot & Voice Intake:** Integrated AI Assistant that converts conversational text or spoken speech into structured job briefs with automatic budget and timeline estimation.
+- **Database:** PostgreSQL 16 with UUID v4 primary keys, strict foreign key constraints, and double-entry ledger auditing.
+- **Storage:** S3-compatible private object storage with presigned short-lived URLs.
 - **Proxy & SSL:** Caddy reverse proxy with automated HTTPS Let's Encrypt certificates.
-- **Payments:** Provider-agnostic payment gateway adapter (fiat-only in MVP: INR, USD, GBP, EUR) with strict webhook signature verification, idempotency, and double-entry ledger reconciliation.
-- **Future Ecosystem (BTQ & QUBEX):** Feature-flagged placeholders only (`btq_payments_enabled=false`, `qubex_benefits_enabled=false`). No active token balances, blockchain wallets, or speculative assets.
+- **Payments & Dual-Currency:** Marketplace listings rendered in **$ USD** with real-time conversion and settlement in **₹ INR** via Razorpay.
+- **Future Ecosystem (BTQ & QUBEX):** Feature-flagged roadmap placeholders only (`btq_payments_enabled=false`, `qubex_benefits_enabled=false`). No active token balances, blockchain wallets, or speculative assets.
 
 ---
 

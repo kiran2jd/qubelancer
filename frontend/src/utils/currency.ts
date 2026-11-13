@@ -1,5 +1,5 @@
 /**
- * Currency utility module for BitQube Freelance.
+ * Currency utility module for QubeLancer.
  * Supports primary display in US Dollars ($ USD) with automatic
  * conversion to sovereign Indian Rupees (₹ INR) for Razorpay settlement.
  */

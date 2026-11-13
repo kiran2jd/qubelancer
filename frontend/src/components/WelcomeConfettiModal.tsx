@@ -29,12 +29,12 @@ export const WelcomeConfettiModal: React.FC = () => {
 
   useEffect(() => {
     // Check if user has already seen the welcome congratulations modal in this session
-    const hasSeen = sessionStorage.getItem("bitqube_confetti_welcome_seen");
+    const hasSeen = sessionStorage.getItem("qubelancer_confetti_welcome_seen");
     if (!hasSeen) {
       // Show after a brief delay so page renders first
       const timeout = setTimeout(() => {
         setIsOpen(true);
-        sessionStorage.setItem("bitqube_confetti_welcome_seen", "true");
+        sessionStorage.setItem("qubelancer_confetti_welcome_seen", "true");
       }, 600);
       return () => clearTimeout(timeout);
     }
@@ -158,7 +158,7 @@ export const WelcomeConfettiModal: React.FC = () => {
         {/* Celebratory Logo Header */}
         <div className="flex flex-col items-center gap-3">
           <div className="h-12 px-4 py-1.5 rounded-2xl bg-white/95 flex items-center justify-center shadow-xl shadow-indigo-500/20 transform hover:scale-105 transition-transform duration-300">
-            <img src="/bitqube-logo.png" alt="BitQube Logo" className="h-9 w-auto object-contain" />
+            <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-9 w-auto object-contain" />
           </div>
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
             <PartyPopper className="w-5 h-5 animate-bounce" />
@@ -169,7 +169,7 @@ export const WelcomeConfettiModal: React.FC = () => {
         <div className="space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Welcome to BitQube Freelance</span>
+            <span>Welcome to QubeLancer</span>
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
