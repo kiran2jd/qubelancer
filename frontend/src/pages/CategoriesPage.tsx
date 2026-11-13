@@ -83,7 +83,7 @@ export const CategoriesPage: React.FC = () => {
           {filtered.map((category) => (
             <div
               key={category.id}
-              className="rounded-2xl bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-indigo-500/40 p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-md"
+              className="rounded-2xl bg-slate-900/95 backdrop-blur-md hover:bg-slate-900 border border-slate-800 hover:border-indigo-500/40 p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 shadow-md hover:shadow-indigo-500/10"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

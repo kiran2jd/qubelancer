@@ -157,8 +157,8 @@ export const WelcomeConfettiModal: React.FC = () => {
 
         {/* Celebratory Logo Header */}
         <div className="flex flex-col items-center gap-3">
-          <div className="h-12 px-4 py-1.5 rounded-2xl bg-white/95 flex items-center justify-center shadow-xl shadow-indigo-500/20 transform hover:scale-105 transition-transform duration-300">
-            <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-9 w-auto object-contain" />
+          <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-indigo-500/30 flex items-center justify-center shadow-xl shadow-indigo-500/20 transform hover:scale-105 transition-transform duration-300 p-2.5">
+            <img src="/qubelancer-cube-logo.png" alt="QubeLancer Logo" className="w-full h-full object-contain" />
           </div>
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
             <PartyPopper className="w-5 h-5 animate-bounce" />

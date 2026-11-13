@@ -10,8 +10,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="h-9 px-2.5 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
-                <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-6 w-auto object-contain" />
+              <div className="w-9 h-9 rounded-xl bg-slate-900 border border-indigo-500/30 flex items-center justify-center shadow-md p-1.5">
+                <img src="/qubelancer-cube-logo.png" alt="QubeLancer Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
                 Qube<span className="text-indigo-400 font-semibold">Lancer</span>

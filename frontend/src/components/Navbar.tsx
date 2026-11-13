@@ -39,8 +39,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="h-10 px-2.5 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:bg-white transition-all duration-200">
-              <img src="/bitqube-logo.png" alt="QubeLancer Logo" className="h-7 w-auto object-contain" />
+            <div className="w-10 h-10 rounded-xl bg-slate-900 border border-indigo-500/30 flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:border-indigo-400 transition-all duration-200 p-1.5">
+              <img src="/qubelancer-cube-logo.png" alt="QubeLancer Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-xl font-bold tracking-tight text-white flex items-center">
